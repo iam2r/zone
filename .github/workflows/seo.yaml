@@ -44,6 +44,7 @@ jobs:
           S3_FORCE_PATH_STYLE: ${{ vars.S3_FORCE_PATH_STYLE }}
         run: |
           cd Rin/
-          node node_modules/puppeteer/install.js
           bun install --frozen-lockfile
+          ls
+          node node_modules/puppeteer/install.js
           bun scripts/render.ts
