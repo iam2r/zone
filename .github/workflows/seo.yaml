@@ -27,7 +27,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libgbm-dev
-          npx puppeteer browsers install chrome
 
       - name: Run script
         env: # Or as an environment variable
@@ -45,6 +44,5 @@ jobs:
         run: |
           cd Rin/
           bun install --frozen-lockfile
-          ls
-          node node_modules/puppeteer/install.js
+          npx puppeteer browsers install chrome
           bun scripts/render.ts
