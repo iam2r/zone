@@ -1,0 +1,26 @@
+/* 通用滚动条样式 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+}
+
+/* 暗色模式滚动条样式 */
+html[data-color-mode="dark"]::-webkit-scrollbar {
+  background-color: #282c34; /* 滚动条轨道背景色 */
+}
+
+html[data-color-mode="dark"]::-webkit-scrollbar-thumb {
+  background-color: #6c757d; /* 滚动条滑块背景色 */
+}
+
+/* 亮色模式滚动条样式 */
+html[data-color-mode="light"]::-webkit-scrollbar {
+  background-color: #f0f0f0; /* 滚动条轨道背景色 */
+}
+
+html[data-color-mode="light"]::-webkit-scrollbar-thumb {
+  background-color: #d3d3d3; /* 滚动条滑块背景色 */
+}
