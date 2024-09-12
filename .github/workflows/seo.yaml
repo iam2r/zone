@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: "0 8 * * *"
   workflow_dispatch:
-  
 
 jobs:
   build:
@@ -28,7 +27,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libgbm-dev
-          npx puppeteer browsers install chrome
+          npx @puppeteer/browsers install chrome@stable
 
       - name: Run script
         env: # Or as an environment variable
