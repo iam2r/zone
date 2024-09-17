@@ -59,7 +59,7 @@ export function Markdown({ content }: { content: string }) {
 
   const Content = useMemo(() => (
     <ReactMarkdown
-      className="toc-content dark:text-neutral-300"
+      className="toc-content dark:text-neutral-300 break-words"
       remarkPlugins={[gfm, remarkMermaid, remarkMath, remarkAlert]}
       children={content}
       rehypePlugins={[rehypeKatex, rehypeRaw]}
