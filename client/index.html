@@ -11,8 +11,56 @@
       rel="stylesheet"
       href="https://ik.imagekit.io/chinesefonts3/packages/syst/dist/SourceHanSerifCN/result.css"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/libs/device@1.2.3/device.min.js"></script>
+    <script>
+      (function () {
+        var Device = window.Device;
+        if (
+          !Device.isDesktop ||
+          (Device.isDesktop && Device.OS.name.includes("Mac"))
+        ) {
+          document.documentElement.setAttribute(
+            "data-scrollbar-mode",
+            "modern"
+          );
+        }
+      })();
+    </script>
+    <style>
+      html[data-scrollbar-mode="modern"] {
+        scrollbar-width: thin;
+      }
 
+      html[data-scrollbar-mode="modern"][data-color-mode="dark"] {
+        scrollbar-color: #6c757d transparent;
+      }
+
+      html[data-scrollbar-mode="modern"][data-color-mode="light"] {
+        scrollbar-color: #d3d3d3 transparent;
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+      }
+
+      html[data-color-mode="dark"] ::-webkit-scrollbar-thumb {
+        background-color: #6c757d;
+      }
+
+      html[data-color-mode="light"] ::-webkit-scrollbar-thumb {
+        background-color: #d3d3d3;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
