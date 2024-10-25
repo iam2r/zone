@@ -36,6 +36,7 @@ export function useColorMode() {
 
   useEffect(() => {
     const updateColorMode = () => {
+      (window as any).PwaTools.triggerThemeUpdate(getCurrentColorMode())
       setColorMode(getCurrentColorMode());
     };
 

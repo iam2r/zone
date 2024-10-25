@@ -15,12 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1c1c1e">
-    <link rel="manifest" href="/manifest.json">
     <script src="/libs/device@1.2.3/device.min.js"></script>
     <script>
-      (function () {
+      function scrollbar() {
         var Device = window.Device;
         if (
           !Device.isDesktop ||
@@ -31,7 +28,15 @@
             "modern"
           );
         }
-      })();
+      }
+      scrollbar();
+    </script>
+    <script src="/libs/pwa-tools@0.0.1/pwa-tools.js"></script>
+    <script>
+      window.PwaTools.initManifest(
+        "https://services-tools.koyeb.app/api/web/pwa/manifest?name=Zone&custom_icon_text_color=fc466b&custom_icon_color=1c1c1e"
+      );
+      window.PwaTools.registerThemeColor();
     </script>
     <style>
       html[data-scrollbar-mode="modern"] {

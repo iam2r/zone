@@ -24,12 +24,15 @@ function Footer() {
 
         if (mode !== 'system' || (!('theme' in localStorage) && window.matchMedia(`(prefers-color-scheme: ${mode})`).matches)) {
             document.documentElement.setAttribute('data-color-mode', mode);
+            (window as any).PwaTools.triggerThemeUpdate(mode)
         } else {
             const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
             if (mediaQuery.matches) {
                 document.documentElement.setAttribute('data-color-mode', 'dark');
+                (window as any).PwaTools.triggerThemeUpdate('dark')
             } else {
                 document.documentElement.setAttribute('data-color-mode', 'light');
+                (window as any).PwaTools.triggerThemeUpdate('light')
             }
         }
         window.dispatchEvent(new Event("colorSchemeChange"));
